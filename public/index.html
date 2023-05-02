@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Full Screen Image Button</title>
+    <style>
+      /* Style for the full-screen container */
+      .fullscreen-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 1);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      /* Style for the full-screen image */
+      .fullscreen-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    </style>
+    <script>
+      function showFullscreen() {
+        // Get the full-screen container element
+        var fullscreenContainer = document.querySelector(
+          ".fullscreen-container"
+        );
+
+        // Get the full-screen image element
+        var fullscreenImage = document.querySelector(".fullscreen-image");
+
+        // Show the full-screen container
+        fullscreenContainer.style.display = "flex";
+
+        // Set the source of the full-screen image
+        fullscreenImage.src = "911.jpeg";
+      }
+
+      function hideFullscreen() {
+        // Get the full-screen container element
+        var fullscreenContainer = document.querySelector(
+          ".fullscreen-container"
+        );
+
+        // Hide the full-screen container
+        fullscreenContainer.style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showFullscreen()">Click to show full screen image</button>
+
+    <div class="fullscreen-container" onclick="hideFullscreen()">
+      <img class="fullscreen-image" />
+    </div>
+  </body>
+</html>
